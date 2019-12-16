@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+#define tez ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define f(i,a,b) for(ll i=a;i<b;i++)
+#define ef(i,a,b) for(ll i=a;i<=b;i++)
+#define rf(i,a,b) for(ll i=a;i>=b;i--)
+#define eb emplace_back
+#define mp make_pair
+#define INF 0x3f3f3f3f
+#define vi vector<pair<ll,ll>>
+#define ff first
+#define ss second
+#define mi map<ll,ll>
+bool isOdd(ll n)
+{
+    return n&1?true:false;
+}
+bool isEven(ll n)
+{
+    return n&1?false:true;
+}
+bool isSet(ll n,int i)
+{
+    return (n&(1<<i)?1:0);
+}
+void setBit(ll &n,int i)
+{
+    n|=(1<<i);
+}
+void clearBit(ll &n,int i)
+{
+    return n&(~(1<<i));
+}
+//~0==-1
+void clearRange(ll &n,int j,int i)
+{
+    //j>i
+    ll mask1,mask2,mask;
+    mask1=(-1<<(j+1));
+    mask2=(1<<i)-1;
+    mask=mask1|mask2;
+    n=n&mask;
+}
+void clearLast_i_Bits(ll &n,int i)
+{
+    ll mask=(-1<<i);
+    n=n&mask;
+}
